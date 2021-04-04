@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3000;
 // mongooseDB database connection
 require("./database/db_connection");
 
+// requring userSchema
+const User = require("./model/userSchema");
+
 // Meddleware -- which hidde the page when user is not login
 const middleware = (req, res, next) => {
   console.log("Hello my middleware");
