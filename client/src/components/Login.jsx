@@ -10,17 +10,8 @@ const Login = () => {
     <>
       <section className="signup">
         <div className="signup__container">
-          <div className="signup-content">
-            <div className="signup-image">
-              <figure>
-                <img src={signupImg} alt="signupImage" />
-              </figure>
-
-              <NavLink to="/register" className="singup-image-link">
-                I don't have an account?
-              </NavLink>
-            </div>
-            <div className="signup-form">
+          <div className="signup-content reverse_login">
+            <div className="signup-form ">
               <h2 className="form-tittle">Sign In</h2>
               <form className="signin-form" id="signin-form">
                 <div className="form-group">
@@ -57,6 +48,15 @@ const Login = () => {
                   />
                 </div>
               </form>
+            </div>
+            <div className="signup-image">
+              <figure>
+                <img src={signupImg} alt="signupImage" />
+              </figure>
+
+              <NavLink to="/register" className="singup-image-link">
+                I don't have an account?
+              </NavLink>
             </div>
           </div>
         </div>
