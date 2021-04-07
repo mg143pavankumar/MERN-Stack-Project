@@ -9,9 +9,9 @@ const Login = () => {
   return (
     <>
       <section className="signup">
-        <div className="signup__container">
+        <div className="signup__container login__container">
           <div className="signup-content reverse_login">
-            <div className="signup-form ">
+            <div className="signup-form login_form">
               <h2 className="form-tittle">Sign In</h2>
               <form className="signin-form" id="signin-form">
                 <div className="form-group">
