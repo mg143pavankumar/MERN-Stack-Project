@@ -6,7 +6,7 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 :root {
@@ -44,6 +44,7 @@ a.nav-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .signup__container {
