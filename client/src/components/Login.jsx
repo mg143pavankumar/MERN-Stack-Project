@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import signupImg from "../images/signup_img.png";
 
 const Login = () => {
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = response.json();
+
+    if (response.status === 400 || !data) {
+      window.alert("Invalid Credentials");
+    } else {
+      window.alert("Login Successfull");
+
+      history.push("/");
+    }
+  };
   return (
     <>
       <section className="signup">
@@ -23,6 +51,8 @@ const Login = () => {
                     name="email"
                     id="email"
                     autoComplete="off"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your Email"
                   />
                 </div>
@@ -36,6 +66,8 @@ const Login = () => {
                     name="password"
                     id="password"
                     autoComplete="off"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Your password"
                   />
                 </div>
@@ -44,6 +76,7 @@ const Login = () => {
                     type="button"
                     value="Sign In"
                     id="signin"
+                    onClick={loginUser}
                     className="form-submit btn-primary"
                   />
                 </div>

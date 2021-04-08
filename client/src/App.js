@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import "./App.css";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" exact component={Contact} />
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Signup} />
+        <Route component={ErrorPage} />
       </Switch>
     </>
   );

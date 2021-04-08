@@ -11,6 +11,7 @@ html {
 
 :root {
   --primaryColor: rgb(0, 140, 255);
+  --secondaryColor: rgb(0, 120, 218);
   --width: 100vw;
   --height: 100vh;
 }
@@ -23,7 +24,8 @@ html {
 } */
 
 a.nav-link {
-  font-size: 1.6rem;
+  font-size: 2rem;
+  margin-right: 2rem;
 }
 
 .navbar-brand {
@@ -190,4 +192,99 @@ a.singup-image-link {
   .login__container {
     margin-top: 5%;
   }
+}
+
+/* HomePage - styling */
+.main_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, rgb(190, 225, 241) 50%, #fff 50%);
+}
+
+.main_container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_container .content p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primaryColor);
+  letter-spacing: 0.3rem;
+  text-align: center;
+}
+
+.main_container .content h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Error page styling */
+
+#notfound {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error__container {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+}
+
+.error__container .notfound_404 h1 {
+  font-size: 30rem;
+  color: rgba(128, 128, 128, 0.13);
+  transform: translateY(-10%);
+}
+
+.error__container .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+}
+
+.error__container .content h2 {
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.error__container .content p {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.error__container .content a.__btn {
+  color: #fff;
+  background-color: var(--primaryColor);
+  padding: 1rem 6rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.error__container .content a.__btn:hover {
+  background-color: var(--secondaryColor);
 }
