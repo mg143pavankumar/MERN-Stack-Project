@@ -3,6 +3,7 @@ const User = require("../model/userSchema");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const authenticate = require("./../middleware/authenticate");
 
 // const middleware = (req, res, next) => {
 //   console.log("Hello my middleware");
@@ -80,6 +81,12 @@ router.post("/signin", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+// about us page
+router.get("/about", authenticate, (req, res) => {
+  console.log("Hello! I am about page");
+  res.send(req.rootUser);
 });
 
 module.exports = router;
