@@ -47,10 +47,8 @@ const Signup = () => {
 
     if (data.status === 422 || !data) {
       window.alert("Invalid Registration");
-      console.log("Invalid Registration");
     } else {
       window.alert("Registration Successful");
-      console.log("Registration Successful");
 
       history.push("/login");
     }

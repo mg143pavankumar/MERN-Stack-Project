@@ -1,22 +1,19 @@
 const jwt = require("jsonwebtoken");
-const User = require("../model/userSchema");
+const User = require("./../model/userSchema");
 
 const Authenticate = async (req, res, next) => {
   try {
-    const token = req.cookies.jwtoken;
+    const token = await req.cookies.jwtoken;
 
     const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
-
     const rootUser = await User.findOne({
       _id: verifyToken._id,
       "tokens.token": token,
     });
-
     //checking weather user login or not
     if (!rootUser) {
       throw new Error("User not founed");
     }
-
     req.token = token;
     req.rootUser = rootUser;
     req.userID = rootUser._id;

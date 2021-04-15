@@ -41,7 +41,7 @@ const Login = () => {
           <div className="signup-content reverse_login">
             <div className="signup-form login_form">
               <h2 className="form-tittle">Sign In</h2>
-              <form className="signin-form" id="signin-form">
+              <form method="POSt" className="signin-form" id="signin-form">
                 <div className="form-group">
                   <label htmlFor="email">
                     <MdEmail />

@@ -5,11 +5,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authenticate = require("./../middleware/authenticate");
 
-// const middleware = (req, res, next) => {
-//   console.log("Hello my middleware");
-//   next();
-// };
-
 // Routing the page
 router.get("/", (req, res) => {
   res.send("Hello world from the home..router js!!");
@@ -63,7 +58,7 @@ router.post("/signin", async (req, res) => {
       const isMatch = await bcrypt.compare(password, userLogin.password);
 
       token = await userLogin.generateAuthToken();
-      console.log(token);
+      // console.log(token);
 
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now() + 2589200000),

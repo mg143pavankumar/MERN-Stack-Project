@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 //For security of database
@@ -13,6 +14,7 @@ require("./database/db_connection");
 const User = require("./model/userSchema");
 
 app.use(express.json()); // used for converting any type of data into json format
+app.use(cookieParser());
 
 // to link the all router files
 app.use(require("./router/auth"));

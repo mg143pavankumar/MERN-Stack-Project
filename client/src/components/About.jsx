@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 const About = () => {
   const history = useHistory();
+  const [userData, setUserData] = useState({});
 
+  let data;
   const callAboutPage = async () => {
     try {
-      const response = await fetch("/about", {
+      const res = await fetch("/about", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -15,16 +17,16 @@ const About = () => {
         credentials: "include",
       });
 
-      const data = await response.json();
+      data = await res.json();
+      console.log(data);
+      setUserData(data);
 
-      if (response.status === 200) {
-        console.log(data);
-
-        const error = new Error(response.error);
+      if (!res.status === 200) {
+        const error = new Error(res.error);
         throw error;
       }
     } catch (err) {
-      console.log(err);
+      console.log("data not found");
       history.push("/login");
     }
   };
@@ -35,8 +37,10 @@ const About = () => {
 
   return (
     <div>
-      About us page
-      <form method="GET"></form>
+      <h1>This is about page</h1>
+      <form method="GET">
+        <h1>user Name: {userData.name}</h1>
+      </form>
     </div>
   );
 };
