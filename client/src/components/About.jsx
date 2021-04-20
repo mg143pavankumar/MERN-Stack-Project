@@ -36,12 +36,101 @@ const About = () => {
   });
 
   return (
-    <div>
-      <h1>This is about page</h1>
-      <form method="GET">
-        <h1>user Name: {userData.name}</h1>
-      </form>
-    </div>
+    <>
+      <div className="container emp__profile">
+        <form method="GET">
+          <div className="row">
+            <div className="col-md-4">
+              <img src="" alt="profile img" />
+            </div>
+
+            <div className="col-md-6 ">
+              <div className="progile-head">
+                <h5>{userData.name}</h5>
+                <h6>{userData.work}</h6>
+                <p className="profile-rating mt-3 mb-5">
+                  RANKING: <span>1/10</span>
+                </p>
+
+                <ul className="nav nav-tabs" role="tablist">
+                  <li className="nav-item">
+                    <a
+                      className="nav-link active"
+                      id="home_tab"
+                      data-toggle="tab"
+                      href="#home"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a
+                      className="nav-link"
+                      id="profile_tab"
+                      data-toggle="tab"
+                      href="#profile"
+                    >
+                      Timeline
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-md-2">
+              <input
+                type="submit"
+                className="profile__edit__btn"
+                name="btnAddMore"
+                value="Edit Profile"
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-4">
+              <div className="profile__work">
+                <p>WORK LINK</p>
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+                <a href="https://github.com/mg143pavankumar" target="_blank">
+                  Github
+                </a>
+                <br />
+              </div>
+            </div>
+
+            <div className="col-md-8 pl-5 about__info">
+              <div className="tab-content profile-tab" id="myTabContent">
+                dfg
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 
